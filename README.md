@@ -2,7 +2,7 @@
 SpringBoot+Mybatis+Vue
 基于用户行为的短视频混合推荐系统
 
-
+系统采用前后端分离架构，后端基于SpringBoot+MyBatis-Plus框架实现，通过RESTful API提供标准化数据接口，结合MySQL和阿里云OSS存储系统数据；前端基于Vue.js框架开发，通过Axios实现数据交互，并采用Element UI组件库优化界面。本系统还应用了PageHelper分页优化等技术。
 
 ## 数据
 
