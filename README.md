@@ -4,22 +4,6 @@ SpringBoot+Mybatis+Vue
 
 
 
-# 项目开发
-
-## 后端包结构
-[structure.txt](src/main/java/structure.txt)
-
-
-## 前端包结构
-[structure.txt](../../../develop/Vue/vue-project/src/structure.txt)
-
-
-## 待开发清单
-1.公网映射；
-
-2.接入大模型；
-
-
 ## 数据
 
 #### 视频爬取
