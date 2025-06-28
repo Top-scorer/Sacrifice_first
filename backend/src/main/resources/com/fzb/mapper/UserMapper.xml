@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzb.mapper.UserMapper">
+    <insert id="insert">
+        insert into user(username, name, password, create_time, update_time)
+        <if test="password != ''">
+            values (#{username},#{name},#{password},#{createTime},#{updateTime})
+        </if>
+        <if test="password == ''">
+            values (#{username},#{name},'123456',#{createTime},#{updateTime})
+        </if>
+    </insert>
+
+    <select id="list" resultType="com.fzb.pojo.User">
+        select * from user
+        <where>
+            <if test="name != null and name != ''">
+                name like concat('%',#{name},'%')<!--name记得修改成当前形式-->
+            </if>
+            <if test="gender != null">
+                and gender = #{gender}
+            </if>
+            <if test="begin != null and end != null">
+                and create_time between #{begin} and #{end}
+            </if>
+        </where>
+        order by update_time desc
+    </select>
+</mapper>

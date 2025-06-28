@@ -1,0 +1,55 @@
+spring:
+  #数据库连接信息
+  datasource:
+    hikari:
+      maximum-pool-size: 200
+      minimum-idle: 50       # 最小空闲连接
+      connection-timeout: 30000  # 连接超时(ms)
+      idle-timeout: 600000   # 空闲连接超时(ms)
+      max-lifetime: 1800000  # 连接最大存活时间(ms)
+      leak-detection-threshold: 5000  # 泄漏检测阈值(ms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shortvideo
+    username: root
+    password: 1234
+  #文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+#Mybatis配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+#阿里云配置
+aliyun:
+  oss:
+    endpoint: ${Aliyun_OSS_Endpoint:}
+    accessKeyId: ${Aliyun_OSS_ACCESSKEYID:}
+    accessKeySecret: ${Aliyun_OSS_ACCESSKEYSECRET:}
+    bucketName: ${Aliyun_OSS_BUCKETNAME:}
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 200
+      min-spare: 10
+    accept-count: 100
+#推荐权重
+RecommendWeight:
+  basicTotal: 500
+  socialRelationship:
+    totalweight: 0.3
+    like: 0.3
+    collect: 0.7
+  contents:
+    totalweight: 0.5
+    category:
+      totalweight: 0.6
+      like: 0.4
+      collect: 0.6
+    semantics:
+      totalweight: 0.4
+  hotGuarantee:
+    totalweight: 0.2
