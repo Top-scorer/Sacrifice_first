@@ -4,21 +4,6 @@ SpringBoot+Mybatis+Vue
 
 系统采用前后端分离架构，后端基于SpringBoot+MyBatis-Plus框架实现，通过RESTful API提供标准化数据接口，结合MySQL和阿里云OSS存储系统数据；前端基于Vue.js框架开发，通过Axios实现数据交互，并采用Element UI组件库优化界面。本系统还应用了PageHelper分页优化等技术。
 
-## 数据
-
-#### 视频爬取
-启动docker的视频爬取容器“douyin_tiktok_api”（localhost:7200）
-
-抖音十个热门标签各20左右的视频
-【admin（1.美女 2.游戏 3.音乐 4.美食） 
-sports（5.体育） 
-fanzhibo（6.旅游 7.动物） 
-bdmin（8.汽车） 
-zhangchi（9.生活） 
-zhaoyiming（10.科技）】
-
-
-
 #### 数据库
 create table user
 (
@@ -141,20 +126,9 @@ CoreNLP
 ### 推荐
 #### 社交网络
 
-
 #### 内容
 ##### 内容标签
 ##### 内容语义（情感分析）
 [评论情感分析计算情感匹配度.docx](../../../2021.9-2025.7%20%E6%AD%A6%E6%B1%89%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E5%8F%82%E8%80%83/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E8%AE%A1%E7%AE%97%E6%83%85%E6%84%9F%E5%8C%B9%E9%85%8D%E5%BA%A6.docx)
 
-# 项目细节注意事项
-1.视频点赞数：查询所有用户点赞数+视频like_base
 
-2.如果用户的视频被下架，但是用户还是想要视频公开，那么需要协调后重新上传
-
-3.系统管理员不能删除用户
-
-
-
-# 开发注意事项
-1.https://www.douyin.com/search/后面加关键词直接搜索相关视频
